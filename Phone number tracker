@@ -1,0 +1,12 @@
+from phonenumbers import parse,timezone,carrier,geocoder
+user=input('Enter your phone number [with +___] :')
+
+phone=parse(user)
+time=timezone.time_zones_for_number(phone)
+carr=carrier.name_for_number(phone,'en')
+reg=geocoder.description_for_number(phone,'en')
+
+print(phone)
+print(time)
+print(carr)
+print(reg)
